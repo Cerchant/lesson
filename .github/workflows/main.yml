@@ -1,0 +1,23 @@
+# My GitHubAction
+
+name: MyGitHubAction
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+    # Steps and commands
+    steps:
+     - name: Print Hello Message
+       run: echo "Hello world from testing"
+
+  my_deploy:
+    runs-on: ubuntu-latest
+    needs: [my_testing]
+    # Steps and commands
+    steps:
+     - name: Print Hello Message
+       run: echo "Hello world from testing"
